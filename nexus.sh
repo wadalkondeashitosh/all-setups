@@ -17,6 +17,5 @@ run_as_user="nexus"
 cat /app/nexus/bin/nexus.rc      -----to check
 ./nexus/bin/nexus start
 ./nexus/bin/nexus status
-sudo firewall-cmd --add-port=8081/tcp --permanent
-sudo firewall-cmd --reload
+allow security group custom tcp with port 8081 ipv4 anywhere
 copy public-ip with port 8081
