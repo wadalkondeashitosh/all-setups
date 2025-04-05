@@ -2,13 +2,21 @@
 sudo yum update -y
 sudo yum install wget -y
 sudo yum install java-1.8.0-openjdk.x86_64 -y
+sudo yum install java-17-amazon-corretto -y
 sudo mkdir /app && cd /app
-wget https://download.sonatype.com/nexus/3/nexus-unix-x86-64-3.79.0-09.tar.gz\
+sudo wget https://download.sonatype.com/nexus/3/nexus-unix-x86-64-3.79.0-09.tar.gz\
 tar -zxvf nexus-unix-x86-64-3.79.0-09.tar.gz
-yum install java-17-amazon-corretto -y
-sudo useradd nexus
-sudo chown -R  nexus:nexus  /app/nexus
-sudo chown -R  nexus:nexus  /app/sonatype-work
-sudo echo "run_as_user"nexus"" > /app/nexus/bin/nexus.rc
-sudo tee /etc/systemd/system/nexus.service > /dev/null
-sudo sh /app/nexus/bin/nexus start
+rm nexus-unix-x86-64-3.79.0-09.tar.gz -y
+sudo mv nexus-3.79.0-09 nexus
+sudo adduser nexus
+sudo chown -R nexus:nexus /app/nexus
+sudo chown -R nexus:nexus /app/sonatype-work
+sudo vi  /app/nexus/bin/nexus.rc
+Uncomment run_as_user parameter and set it as following
+run_as_user="nexus"
+cat /app/nexus/bin/nexus.rc      -----to check
+./nexus/bin/nexus start
+./nexus/bin/nexus status
+sudo firewall-cmd --add-port=8081/tcp --permanent
+sudo firewall-cmd --reload
+copy public-ip with port 8081
