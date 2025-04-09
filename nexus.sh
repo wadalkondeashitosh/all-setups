@@ -6,7 +6,7 @@ sudo yum install java-17-amazon-corretto -y
 sudo mkdir /app && cd /app
 sudo wget https://download.sonatype.com/nexus/3/nexus-unix-x86-64-3.79.0-09.tar.gz\
 tar -zxvf nexus-unix-x86-64-3.79.0-09.tar.gz
-rm nexus-unix-x86-64-3.79.0-09.tar.gz -y
+rm nexus-unix-x86-64-3.79.0-09.tar.gz 
 sudo mv nexus-3.79.0-09 nexus
 sudo adduser nexus
 sudo chown -R nexus:nexus /app/nexus
