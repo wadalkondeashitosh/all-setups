@@ -15,7 +15,10 @@
 
     - name: install java
       command: yum install java-1.8.0-openjdk -y
-
+      
+    - name: install java
+      command: yum install java-17-amazon-corretto -y
+      
     - name: setting the roles in tomcat-user.xml file
       template:
         src: tomcat-users.xml
