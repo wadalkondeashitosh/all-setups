@@ -10,7 +10,8 @@ sudo yum install java-17-amazon-corretto -y
 yum install jenkins -y
 update-alternatives --config java
 
-#STEP-4: RESTARTING JENKINS (when we download service it will on stopped state)
+#STEP-4: RESTARTING JENKINS (when we download service it will on stopped state
+sudo systemctl daemon-reload
 systemctl enable jenkins
 systemctl start jenkins
 systemctl status jenkins
