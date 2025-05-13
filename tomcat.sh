@@ -7,5 +7,5 @@ sed -i '58  a\<user username="tomcat" password="Ashu@2612" roles="manager-gui, m
 sed -i '59  a\</tomcat-users>' apache-tomcat-9.0.102/conf/tomcat-users.xml
 sed -i '56d' apache-tomcat-9.0.102/conf/tomcat-users.xml
 sed -i '21d' apache-tomcat-9.0.102/webapps/manager/META-INF/context.xml
-sed -i '22d'  apache-tomcat-9.0.102/webapps/manager/META-INF/context.xml
+sed -i '22d' apache-tomcat-9.0.102/webapps/manager/META-INF/context.xml
 sh apache-tomcat-9.0.102/bin/startup.sh
