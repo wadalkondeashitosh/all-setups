@@ -12,8 +12,7 @@ sudo adduser nexus
 sudo chown -R nexus:nexus /app/nexus
 sudo chown -R nexus:nexus /app/sonatype-work
 sudo vi  /app/nexus/bin/nexus.rc
-Uncomment run_as_user parameter and set it as following
-run_as_user="nexus"
+add run_as_user="nexus" inside nexus.rc
 cat /app/nexus/bin/nexus.rc      #-----to check
 ./nexus/bin/nexus start
 ./nexus/bin/nexus status
