@@ -1,5 +1,5 @@
 sudo yum install java-17-amazon-corretto -y
-https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.41/bin/apache-tomcat-10.1.41.tar.gz
+wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.41/bin/apache-tomcat-10.1.41.tar.gz
 tar -zxvf apache-tomcat-10.1.41.tar.gz
 sed -i '56  a\<role rolename="manager-gui"/>' apache-tomcat-10.1.41/conf/tomcat-users.xml
 sed -i '57  a\<role rolename="manager-script"/>' apache-tomcat-10.1.41/conf/tomcat-users.xml
