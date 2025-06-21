@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+ movies:
+  image:movies:v1
+  ports:
+    -"81:80"
