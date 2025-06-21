@@ -1,6 +1,18 @@
 version: '3.8'
 services:
- movies:
-  image:movies:v1
-  ports:
-    -"81:80"
+  movies:
+   image: movies:v1
+   ports:
+     - "81:80"
+  train:
+   image: train:v2
+   ports:
+     - "82:80"
+  dth:
+   image: dth:v3
+   ports:
+     - "83:80"
+  recharge:
+   image: recharge:v4
+   ports:
+     - "84:80"
