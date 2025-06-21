@@ -9,7 +9,7 @@ services:
     ports:
       - "82:80"
   recharge:
-    image: train:v3
+    image: recharge:v3
     ports:
       - "83:80"
   dth:
